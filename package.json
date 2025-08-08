@@ -1,0 +1,16 @@
+{
+  "name": "resume_scanner_backend",
+  "version": "1.0.0",
+  "description": "Backend proxy for the AI Resume Screener",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0"
+  }
+}

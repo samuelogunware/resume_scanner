@@ -85,8 +85,8 @@ export default function App() {
     
     // This function now calls our own backend proxy server
     const callBackendApi = async (prompt, isJson = false) => {
-        // The backend endpoint we will create
-        const backendUrl = '/api/gemini';
+        // Use the live URL of your backend deployed on Render
+        const backendUrl = 'https://resume-scanner-backend-yqfs.onrender.com/api/analyze';
 
         const response = await fetch(backendUrl, {
             method: 'POST',
@@ -190,16 +190,10 @@ export default function App() {
                 <div className="container mx-auto p-4 md:p-8">
                     <header className="text-center mb-10">
                         <h1 className="text-4xl md:text-5xl font-bold text-slate-900">AI Resume Screener</h1>
-                        <p className="text-slate-600 mt-2">Powered by Google Gemini</p>
                     </header>
 
                     <main className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div className="bg-white p-6 rounded-2xl shadow-lg space-y-6">
-                            <div className="bg-blue-50 border-l-4 border-blue-400 text-blue-700 p-4 rounded-r-lg">
-                                <p className="font-bold">Portfolio Mode</p>
-                                <p className="text-sm">API key is now handled securely on the backend. No need to enter it here!</p>
-                            </div>
-                            
                             <div className="relative">
                                 <label htmlFor="jobDescription" className="block text-lg font-semibold mb-2 text-slate-700">1. Paste Job Description</label>
                                 <textarea id="jobDescription" rows="8" value={jobDescription} onChange={(e) => setJobDescription(e.target.value)} placeholder="Paste the full job description here..." className="w-full p-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition"></textarea>
